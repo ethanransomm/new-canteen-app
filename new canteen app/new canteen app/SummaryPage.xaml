@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="new_canteen_app.SummaryPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Item Selection" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+            </Frame>
+            <Grid VerticalOptions="Start" HorizontalOptions="Center">
+                <Button x:Name="Fries" ClassId="Fries" Clicked="AddToKart" Text="Fries" HorizontalOptions="Fill" Grid.Column="0" Grid.Row="0" ></Button>
+                <Button x:Name="Curry" ClassId="Curry" Clicked="AddToKart" Text="Curry" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="0" ></Button>
+                <Button x:Name="Cheese" ClassId="Cheese" Clicked="AddToKart" Text="Cheese" HorizontalOptions="Fill" Grid.Column="2" Grid.Row="0" ></Button>
+                <Button x:Name="Jacket_Potato" ClassId="JackPot" Clicked="AddToKart" Text="Jacket Potato" HorizontalOptions="Fill" Grid.Column="0" Grid.Row="1" ></Button>
+                <Button x:Name="Beef_Burger" ClassId="BeefBurg" Clicked="AddToKart" Text="Beef Burger" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="1" ></Button>
+                <Button x:Name="Chicken_Burger" ClassId="ChickBurg" Clicked="AddToKart" Text="Chicken Burger" WidthRequest="50" HorizontalOptions="Fill" Grid.Column="2" Grid.Row="1" ></Button>
+
+
+            </Grid>
+            <Grid VerticalOptions="Start" HorizontalOptions="EndAndExpand" Padding="20" Margin="300,250,0,0">
+                <Label x:Name="Price" HorizontalOptions="Center" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="-20,0,0,-20"/>
+            </Grid>
+            <Button Text="Checkout" HorizontalOptions="Center" VerticalOptions="End" Clicked="Button_Clicked"/> 
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
