@@ -8,8 +8,9 @@
                 <Label Text="Receipt" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
             </Frame>
 
-            <Editor x:Name="OrderCount"
-                     IsReadOnly="true" 
+            <Label x:Name="OrderCount" FontSize="25"
+                   
+                      
                     
 
                 VerticalOptions="CenterAndExpand" 

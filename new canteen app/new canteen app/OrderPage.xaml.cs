@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,14 +19,19 @@ namespace new_canteen_app
             InitializeComponent();
 
             //OrderCount.Text = cheesecount.ToString() + friescount.ToString() + currycount.ToString() + totalPrice.ToString();
-            
+
+            StringBuilder sb = new StringBuilder();
+            CultureInfo culture = new CultureInfo("en-GB");
+
             foreach(FoodItems item in foodItems)
             {
-                OrderCount.Text += item.name + "x" + item.quantity + "=" + item.quantity * item.price + "//n";
-
+                
+                sb.Append($"{ item.name } x {item.quantity} = { (item.quantity * item.price).ToString("C", culture) } \n");
             }
 
-            OrderCount.Text +=  "£" + totalPrice ;
+            OrderCount.Text = sb.ToString();
+
+            OrderCount.Text += "Total:" +  "£" + totalPrice ;
         }
     }
 }

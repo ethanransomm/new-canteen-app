@@ -52,58 +52,34 @@ namespace new_canteen_app
 
             if (classId == "Curry")
             {
-                totalPrice = totalPrice + curry.price;
-                if (items.Contains(classId) == false)
-                {
-                    
-                    foodItems.Add(curry);
-                }
-                
-                curry.quantity++;
-              
+                receiptFunction(curry, classId);
+
+
             }
 
             if (classId == "Cheese")
             {
 
-                totalPrice = totalPrice + cheese.price;
-                if (items.Contains(classId) == false)
-                {
+                receiptFunction(cheese, classId);
 
-                    foodItems.Add(curry);
-                }
-
-                curry.quantity++;
             }
 
             if (classId == "JackPot")
             {
-                totalPrice = totalPrice + jacketpotato.price;
-                if (items.Contains(classId) == false)
-                {
+                receiptFunction(jacketpotato, classId);
 
-                    foodItems.Add(jacketpotato);
-                }
-
-                jacketpotato.quantity++;
             }
 
             if (classId == "BeefBurg")
             {
-                totalPrice = totalPrice + beefburger.price;
-                if (items.Contains(classId) == false)
-                {
+                receiptFunction(beefburger, classId);
 
-                    foodItems.Add(beefburger);
-                }
-
-                beefburger.quantity++;
             }
 
             if (classId == "ChickBurg")
             {
                 totalPrice = totalPrice + chickenburger.price;
-                if (items.Contains(classId) == false)
+                if (foodItems.Contains(chickenburger) == false)
                 {
 
                     foodItems.Add(chickenburger);
@@ -118,7 +94,7 @@ namespace new_canteen_app
         public void receiptFunction(FoodItems item, string classId)
         {
             totalPrice = totalPrice + item.price;
-            if (items.Contains(classId) == false)
+            if (foodItems.Contains(item) == false)
             {
 
                 foodItems.Add(item);
