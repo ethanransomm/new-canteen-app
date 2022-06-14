@@ -9,7 +9,8 @@
                 </Frame> 
                 
                 <Entry x:Name="username" Placeholder="Username" VerticalTextAlignment="Center" />
-            <Entry x:Name="password" Placeholder="Password" VerticalTextAlignment="Center" />
+            <Entry x:Name="password" Placeholder="Password" VerticalTextAlignment="Center"
+                   IsPassword="True"/>
             <Button  Text="Login" Clicked="button_clicked" />
            
 

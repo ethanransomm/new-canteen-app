@@ -1,27 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             NavigationPage.HasNavigationBar="false"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="new_canteen_app.SummaryPage">
+   
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center">
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Item Selection" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+        
+        <ScrollView>
+            <StackLayout HorizontalOptions="Center">
+            <!--<Label Text="Item Selection" HorizontalTextAlignment="Center" TextColor="White" FontSize="25" Margin="0,0,0,0"/>-->
+                <Frame BackgroundColor="#FC812A" Padding="10" CornerRadius="0">
+                <Label Text="Item Selection" HorizontalTextAlignment="Center" TextColor="Black" FontSize="25"/>
             </Frame>
-            <Grid VerticalOptions="Start" HorizontalOptions="Center">
-                <Button x:Name="Fries" ClassId="Fries" Clicked="AddToKart" Text="Fries" HorizontalOptions="Fill" Grid.Column="0" Grid.Row="0" ></Button>
-                <Button x:Name="Curry" ClassId="Curry" Clicked="AddToKart" Text="Curry" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="0" ></Button>
-                <Button x:Name="Cheese" ClassId="Cheese" Clicked="AddToKart" Text="Cheese" HorizontalOptions="Fill" Grid.Column="2" Grid.Row="0" ></Button>
-                <Button x:Name="Jacket_Potato" ClassId="JackPot" Clicked="AddToKart" Text="Jacket Potato" HorizontalOptions="Fill" Grid.Column="0" Grid.Row="1" ></Button>
-                <Button x:Name="Beef_Burger" ClassId="BeefBurg" Clicked="AddToKart" Text="Beef Burger" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="1" ></Button>
-                <Button x:Name="Chicken_Burger" ClassId="ChickBurg" Clicked="AddToKart" Text="Chicken Burger" WidthRequest="50" HorizontalOptions="Fill" Grid.Column="2" Grid.Row="1" ></Button>
+                
+                    <Grid RowSpacing="25" ColumnSpacing="25" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,0,0,0">
+
+                    <Frame  Padding="0" BackgroundColor="#FC812A"   CornerRadius="50">
+                        <ImageButton ClassId="BeefBurg" Source="beefburguer.png"  Clicked="AddToKart" HorizontalOptions="Start"  BackgroundColor="Transparent" WidthRequest="200" Grid.Row="0" Grid.Column="0"/>
+                    </Frame>
+                    <Frame Padding="0" BackgroundColor="#2398DA" CornerRadius="50" Grid.Column="1" Grid.Row="0" >
+                        <ImageButton ClassId="Curry" Source="Curry.png" Clicked="AddToKart" BackgroundColor="Transparent" WidthRequest="200"/>
+                    </Frame>
+                    <Frame Padding="0" BackgroundColor="#2398DA" CornerRadius="50" Grid.Column="0" Grid.Row="1" >
+                    <ImageButton ClassId="Cheese" Source="cheese.png" Clicked="AddToKart" BackgroundColor="Transparent" WidthRequest="200"/>
+                    </Frame>
+                    <Frame Padding="0" BackgroundColor="#FC812A" CornerRadius="50" Grid.Column="2" Grid.Row="0">
+                        <ImageButton ClassId="JackPot" Source="jacketpotato.png" Clicked="AddToKart" Grid.Column="2" Grid.Row="0" WidthRequest="200" HeightRequest="110" BackgroundColor="Transparent" />
+                    </Frame>
+                    <Frame Padding="0" BackgroundColor="#2398DA" CornerRadius="50" Grid.Column="2" Grid.Row="1">
+                    <ImageButton ClassId="ChickBurg" Source="chickenburger.png" Clicked="AddToKart" WidthRequest="200" HeightRequest="110" BackgroundColor="Transparent" />
+                    </Frame>
+                    <Frame Padding="0" BackgroundColor="#FC812A" CornerRadius="50" Grid.Column="1" Grid.Row="1">
+                        <ImageButton ClassId="Fries" Source="fries.png" Clicked="AddToKart" Grid.Column="1" Grid.Row="1" WidthRequest="200" HeightRequest="110" BackgroundColor="Transparent" />
+                    </Frame>
 
 
-            </Grid>
-            <Grid VerticalOptions="Start" HorizontalOptions="EndAndExpand" Padding="20" Margin="300,250,0,0">
-                <Label x:Name="Price" HorizontalOptions="Center" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="-20,0,0,-20"/>
-            </Grid>
-            <Button Text="Checkout" HorizontalOptions="Center" VerticalOptions="End" Clicked="Button_Clicked"/> 
+                    <!--<Button x:Name="Curry" ClassId="Curry" ImageSource="Curry.png" Clicked="AddToKart" Text="Curry £3" Grid.Column="1" Grid.Row="0" BackgroundColor="Transparent"></Button>-->
+                 <!--<Button x:Name="Cheese" ClassId="Cheese" ImageSource="Curry.png" Clicked="AddToKart" Text="Cheese £0.50"  Grid.Column="2" Grid.Row="0" ></Button>
+                 <Button x:Name="Jacket_Potato" ClassId="JackPot" ImageSource="Curry.png" Clicked="AddToKart" Text="Jacket Potato £3.50"  Grid.Column="0" Grid.Row="1" ></Button>
+                    <Button x:Name="Beef_Burger" ClassId="BeefBurg" ImageSource="Curry.png" Clicked="AddToKart" Text="Beef Burger £2.99"  Grid.Column="1" Grid.Row="1" ></Button>
+                    <Button x:Name="Chicken_Burger" ClassId="ChickBurg" ImageSource="Curry.png" Clicked="AddToKart" Text="Chicken Burger £3.50" Grid.Column="2" Grid.Row="1" ></Button>-->
+
+                    
+                </Grid>
+
+            <Grid Padding="20" Margin="0,0,0,0">
+                <Label x:Name="Price" HorizontalOptions="End" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="-20,0,0,-20"/>
+                 <Button Text="Checkout" HorizontalOptions="Center" VerticalOptions="End" Clicked="Button_Clicked" Margin="0,0,0,0"/>
+                  <Button Text="Clear Basket" HorizontalOptions="Center" VerticalOptions="Start" Clicked="Basket_Clear" Margin="-300,0,0,0"/>
+                </Grid>
+         
 
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

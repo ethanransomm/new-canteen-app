@@ -8,16 +8,20 @@
                 <Label Text="Receipt" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
             </Frame>
 
-            <Label x:Name="OrderCount" FontSize="25"
-                   
-                      
-                    
+            <Label x:Name="OrderNumber" HorizontalOptions="Center" />
 
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BackgroundColor="#a39b96" Padding="24" CornerRadius="0">
+                <Label Text="Summary" HeightRequest="50" FontSize="30" HorizontalOptions="Center" BackgroundColor="#a39b96" 
+                    />
+            </Frame>
+            <Frame BackgroundColor="#a39b96" Padding="24" CornerRadius="0" Margin="-20, -40,0,0">
+                <Label x:Name="OrderCount" FontSize="25"  HorizontalOptions="Center" BackgroundColor="#a39b96"/>
+            </Frame>
             
-            
-            
+
+                
+                
+                      
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

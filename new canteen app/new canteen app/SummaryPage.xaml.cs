@@ -40,9 +40,11 @@ namespace new_canteen_app
             InitializeComponent();
         }
 
+                
+
         private void AddToKart(object sender, EventArgs e)
         {
-            var button = (Button)sender; 
+            var button = (ImageButton)sender; 
             var classId = button.ClassId;
 
             if(classId == "Fries")
@@ -108,10 +110,36 @@ namespace new_canteen_app
         //   //Navigation.PushAsync(new OrderPage(CheeseCount, FriesCount, CurryCount));
         //}
 
+        private void ClearBasket()
+        {
+            foodItems.Clear();
+
+            fries = new FoodItems(2M, "Fries", 0);
+            curry = new FoodItems(3.50M, "Curry", 0);
+            cheese = new FoodItems(0.50M, "Cheese", 0);
+            jacketpotato = new FoodItems(3M, "Jacket Potato", 0);
+            beefburger = new FoodItems(2.99M, "Beef Burger", 0);
+            chickenburger = new FoodItems(3.25M, "Chicken Burger", 0);
+
+            totalPrice = 0;
+            Price.Text = ("Total: £" + totalPrice);
+
+
+           
+
+
+         //   FoodItems items;
+           
+        }
         private void Button_Clicked(object sender, EventArgs e)
         {
             //Navigation.PushAsync(new OrderPage(items, totalPrice, CheeseCount, FriesCount, CurryCount));
             Navigation.PushAsync(new OrderPage(foodItems, totalPrice));
+        }
+
+        private void Basket_Clear(object sender, EventArgs e)
+        {
+            ClearBasket();
         }
     }
 }

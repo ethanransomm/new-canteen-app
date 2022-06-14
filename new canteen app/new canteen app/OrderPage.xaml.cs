@@ -19,19 +19,25 @@ namespace new_canteen_app
             InitializeComponent();
 
             //OrderCount.Text = cheesecount.ToString() + friescount.ToString() + currycount.ToString() + totalPrice.ToString();
+           
+            Random rnd = new Random();
+            int dice = rnd.Next (0, 9999);
+            OrderNumber.Text = "Order Number: " + dice.ToString();
 
             StringBuilder sb = new StringBuilder();
             CultureInfo culture = new CultureInfo("en-GB");
 
             foreach(FoodItems item in foodItems)
             {
-                
+               
                 sb.Append($"{ item.name } x {item.quantity} = { (item.quantity * item.price).ToString("C", culture) } \n");
             }
 
+
+
             OrderCount.Text = sb.ToString();
 
-            OrderCount.Text += "Total:" +  "£" + totalPrice ;
+            OrderCount.Text += "Subtotal: " + "£" + totalPrice ;
         }
     }
 }

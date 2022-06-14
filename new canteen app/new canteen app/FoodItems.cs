@@ -15,5 +15,9 @@ namespace new_canteen_app
             this.name = name;
             this.quantity = quantity;
         }
+        public void ClearQuantity()
+        {
+            quantity = 0;
+        }
     }
 }
